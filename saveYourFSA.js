@@ -26,15 +26,15 @@ async function start() {
 }
 
 async function waitForFSA() {
-    if (now.hour() < 4 || (now.hour === 4 && now.minute < 46)) {
+    if (now.hour() < 2 || (now.hour === 2 && now.minute < 46)) {
         let then = now.clone()
-        then.hour(4);
+        then.hour(2);
         then.minute(45);
         await timeout(then.diff(now));
     } else {
         let then = now.clone();
         then.add(1, 'd');
-        then.hour(4);
+        then.hour(2);
         then.minute(45);
         await timeout(then.diff(now));
     }
